@@ -1,37 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 11:27:43 by ruben             #+#    #+#             */
-/*   Updated: 2022/08/29 11:48:54 by ruben            ###   ########.fr       */
+/*   Created: 2022/08/29 13:30:36 by ruben             #+#    #+#             */
+/*   Updated: 2022/08/29 13:37:19 by ruben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_strncmp(char *s1, char *s2, unsigned int n);
+char *ft_strncat(char *dest, char *src, unsigned int nb);
 
-/*int main(void)
+int main(void)
 {
-    int n;
-    char s1[] = "hel3a";
-    char s2[] = "hello";
-    n = 3;
+    char src[] = " de C.";
+    char dest[50] = "Curso";
     
-    printf("%d", ft_strncmp(s1, s2, n));
-}*/
+    printf("%s\n",ft_strncat(dest, src, 9));
+}
 
-int ft_strncmp(char *s1, char *s2, unsigned int n)
+char *ft_strncat(char *dest, char *src, unsigned int nb)
 {
     int i;
-    
-    i = 0;
-    while(s1[i] == s2[i] && (i < n - 1 && i < n - 1))
+	int j;
+    int number = nb;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
     {
         i++;
     }
-    return(s1[i] - s2[i]);
+
+	while (i < number)
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }

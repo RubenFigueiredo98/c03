@@ -1,37 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*   ft_strcat.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ruben <ruben@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/29 11:27:43 by ruben             #+#    #+#             */
-/*   Updated: 2022/08/29 11:48:54 by ruben            ###   ########.fr       */
+/*   Created: 2022/08/29 12:39:46 by ruben             #+#    #+#             */
+/*   Updated: 2022/08/29 13:29:45 by ruben            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int ft_strncmp(char *s1, char *s2, unsigned int n);
+char    *ft_strcat(char *dest, char *src);
 
-/*int main(void)
+int main(void)
 {
-    int n;
-    char s1[] = "hel3a";
-    char s2[] = "hello";
-    n = 3;
+    char src[] = " de C";
+    char dest[50] = "Curso";
     
-    printf("%d", ft_strncmp(s1, s2, n));
-}*/
+    printf("%s\n",ft_strcat(dest, src));
+}
 
-int ft_strncmp(char *s1, char *s2, unsigned int n)
+char *ft_strcat(char *dest, char *src)
 {
     int i;
-    
-    i = 0;
-    while(s1[i] == s2[i] && (i < n - 1 && i < n - 1))
+	int j;
+
+	i = 0;
+	j = 0;
+	while (dest[i] != '\0')
     {
         i++;
     }
-    return(s1[i] - s2[i]);
+
+	while (src[j] != '\0')
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
+	}
+	dest[i] = '\0';
+	return (dest);
 }
